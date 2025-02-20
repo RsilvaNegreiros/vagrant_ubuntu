@@ -1,0 +1,37 @@
+ config.vm.box_check_update = false
+ =============================================
+ Alterar a porta de acesso
+ config.vm.network "forwarded_port", guest: 80, host: 8080 
+ config.vm.network "forwarded_port", guest: 80, host: 8080, host_ip: "127.0.0.1"
+
+ =============================================
+ Alterar as configurações de rede
+ config.vm.network "private_network", ip: "192.168.33.10"
+ config.vm.network "public_network" (Coloca a placa de rede em modo brigde)
+
+ =============================================
+#Enviar uma pasta da minha máquina para a VM#
+config.vm.synced_folder "../data", "/vagrant_data"
+config.vm.synced_folder ".", "/vagrant", disabled: true
+
+ =============================================
+
+ config.vm.provider "virtualbox" do |vb|
+   vb.gui = true
+   vb.memory = "1024"
+ end
+
+ =============================================
+#Criar script para instalação automática de serviços#
+config.vm.provision "shell", inline: <<-SHELL
+   apt update && apt upgrade -y && apt dist-upgrade -y
+   apt-get install -y nginx && service nginx start
+SHELL
+
+=============================================
+#Comandos#
+vagrant init - Iniciar a criação da VM
+vagrant up - Subir a VM
+vagrant destroy - Destroi a VM
+vagrant provision - Atualizar o provision
+vagrant reload - Reinicia a VM
