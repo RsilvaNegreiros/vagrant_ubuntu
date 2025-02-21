@@ -35,3 +35,5 @@ vagrant up - Subir a VM
 vagrant destroy - Destroi a VM
 vagrant provision - Atualizar o provision
 vagrant reload - Reinicia a VM
+=============================================
+Testar o comando curl + [IP] e verificar as portas
