@@ -1,1 +1,0 @@
-{"virtualbox":{"/var/www/html":{"guestpath":"/var/www/html","hostpath":"/home/rsilva/Documents/GitHub/vagrant_ubuntu/site","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"/home/rsilva/Documents/GitHub/vagrant_ubuntu","disabled":false,"__vagrantfile":true}}}
