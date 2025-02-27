@@ -6,3 +6,12 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", path: "script.sh"
   config.vm.synced_folder "site/", "/var/www/html"
 end
+
+config.vm.provider "virtualbox" do |v|
+  v.cpus: 2
+  v.memory = 2048
+end
+
+config.vm.provision "ansible" do |ansible|
+  ansible.playbook = "playbook.yml"
+end
